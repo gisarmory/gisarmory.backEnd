@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	
+<script src="../lib/jquery.min.js"></script>
+<script>
+		
+		//页面打开地址：http://localhost:7004/watergis/{packageName}/T_{className}.html
+
+		var hostUrl = window.location.origin + "/watergis/{className}/";
+		
+		
+		//此注释不要删除，用于自动生成代码，调用方法
+
+		
+		
+		
+		//此注释不要删除，用于自动生成代码，方法主体
+
+		
+		
+		
+		
+		
+		//调用后台接口
+		function callAjax(funcName, paramObj, log, callback){
+			$.ajax({
+				type: "post",
+				url: hostUrl + funcName,
+				data: paramObj,
+				contentType:'application/json',
+				dataType: 'json',
+				success: function(result) {
+					console.log(log);
+					console.log(result);
+					if(callback){
+						callback(result);
+					}
+				}
+			});
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,11 @@
+package com.gisarmory.autocode;
+
+
+public class A_DataSource {
+	public A_DataSource() {
+		
+	}
+	public static final String url = "jdbc:postgresql://127.0.0.1:5432/dbname";
+	public static final String username ="username";
+	public static final String password = "password";
+}
