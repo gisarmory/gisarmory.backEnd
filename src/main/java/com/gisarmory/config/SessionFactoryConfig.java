@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 
 @Configuration
 @EnableTransactionManagement
-@MapperScan("com.THHSEI.runmap.dao,com.THHSEI.guank.dao")	//,com.THHSEI.guank.dao
+@MapperScan("com.gisarmory.blog.dao")	
 public class SessionFactoryConfig implements TransactionManagementConfigurer {
 	/** * mybatis 配置路径 */
 	private static String MYBATIS_CONFIG = "mybatis/mybatis-config.xml";

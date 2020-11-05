@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gisarmory.blog.dao.D_Geometry">
+
+	<!-- 图形缓冲,geojson格式 -->
+	<select id="buffer_geojson" parameterType="java.util.Map"  resultType="java.util.HashMap">
+		-- buffer_geojson
+		SELECT f_buffer as buffer from postgres.f_buffer(cast(#{param.geojson} as text), cast(#{param.buffer} as float8));
+	</select>
+
+	<!-- 此注释不要删除，用于自动生成代码 -->
+	  
+
+
+	
+</mapper>

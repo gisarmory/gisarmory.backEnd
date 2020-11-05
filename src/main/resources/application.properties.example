@@ -7,9 +7,13 @@ spring.datasource.password=password
 
 
 
-server.port=8585
+server.port=8885
 server.context-path=/gisarmory/backend
 
+
+
+#-----------------log4j2-----------------
+logging.config=classpath:log4j2.xml
 
 
 

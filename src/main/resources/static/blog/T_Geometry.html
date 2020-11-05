@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>智水地图后台服务接口调用示例，缓冲分析</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="../lib/jquery.min.js"></script>
+	</head>
+
+	<body>
+	</body>
+	<script>
+		
+		//测试页面地址：http://localhost:8885/gisarmory/backend/blog/T_Geometry.html
+		
+		var hostUrl = window.location.origin + "/gisarmory/backend/";	//开发地址
+
+		
+		
+		buffer_geojson();		//图形缓冲,geojson格式
+
+		//此注释不要删除，用于自动生成代码，调用方法
+		
+
+
+
+		
+		//此注释不要删除，用于自动生成代码，方法主体
+
+		//图形缓冲,geojson格式
+		function buffer_geojson(){
+			var jsonObj = {
+					geojson:'{"type":"LineString","coordinates":[[116.37826,39.898609],[116.377487,39.905457],[116.388817,39.905983],[116.400404,39.906576],[116.400404,39.913686]]}',
+					buffer:100
+			};
+			var jsonStr = JSON.stringify(jsonObj);
+			callAjax("geometry/buffer_geojson", jsonStr, "图形缓冲,geojson格式，buffer_geojson");
+		}
+		
+		
+		//调用后台接口
+		function callAjax(funcName, paramObj, log, callback){
+			$.ajax({
+				type: "post",
+				url: hostUrl + funcName,
+				data: paramObj,
+				contentType:'application/json',
+				dataType: 'json',
+				success: function(result) {
+					console.log(log);
+					console.log(result);
+					if(callback){
+						callback(result);
+					}
+					},
+				error:function(e){
+					console.log(e);
+				}
+				});
+		}
+	</script>
+
+</html>
