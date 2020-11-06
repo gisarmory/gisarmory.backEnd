@@ -5,7 +5,12 @@
 	<!-- 图形缓冲,geojson格式 -->
 	<select id="buffer_geojson" parameterType="java.util.Map"  resultType="java.util.HashMap">
 		-- buffer_geojson
-		SELECT f_buffer as buffer from postgres.f_buffer(cast(#{param.geojson} as text), cast(#{param.buffer} as float8));
+		SELECT f_buffer as buffer 
+		from postgres.f_buffer(
+			cast(#{param.geojson} as text), 
+			cast(#{param.buffer} as float8), 
+			cast(#{param.type} as int)
+			);
 	</select>
 
 	<!-- 此注释不要删除，用于自动生成代码 -->

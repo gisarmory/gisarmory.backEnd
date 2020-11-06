@@ -34,9 +34,6 @@ public class SI_Geometry implements S_Geometry {
 	public List<Map<String, Object>> buffer_geojson(String json) throws Exception {
 		Map<String, Object> paramMap = JsonPluginsUtil.json2Map(json);
 		List<Map<String, Object>> list = D_Geometry.buffer_geojson(paramMap);
-		if (list!=null && list.size()>0) {
-			Util.replaceNull(list, "-");
-		}
 		return list;
 	}
 

@@ -20,7 +20,7 @@ public class CustomCorsConfiguration {
 	@Bean
 	public CorsFilter corsFilter() {
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//		source.registerCorsConfiguration("/**", buildConfig()); // 4 设置跨域
+		source.registerCorsConfiguration("/**", buildConfig()); // 4 设置跨域
 		return new CorsFilter(source);
 	}
 
